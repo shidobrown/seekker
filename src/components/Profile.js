@@ -1,144 +1,93 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import "../Profile.css"
+import React, { Component } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity
+} from 'react-native';
+
 export default class Profile extends Component {
 
-    state = {
-        username: "",
-        email: "",
-        password: "",
-        firstName: "",
-        lastName: "",
-        oldUsername: ""
-    }
-
-    async componentDidMount(){
-        const uid = this.props.match.params.uid;
-        const res = await axios.get(`/api/user/${uid}`);
-        if(res.data){
-            this.showUser(res.data);
-        } else {
-            alert("No user is found with given id");
-        }
-    }
-
-    showUser = (user) => {
-        const {username, email, firstName, lastName, password} = user;
-        this.setState({
-            username, 
-            email, 
-            firstName, 
-            lastName, 
-            password, 
-            oldUsername: username
-        });
-    }
-
-    onChange = e => {
-        this.setState({
-            [e.target.name]: e.target.value
-        });
-    }
-
-    onSubmit = async e => {
-        e.preventDefault();
-        const {username, email, firstName, lastName, password, oldUsername} = this.state;
-        if(username !== oldUsername) {
-             // Check if username is available
-            const res = await axios.get(`/api/user?username=${username}`);
-            if(res.data){
-                alert("Username is taken, please try another one");
-                return;
-            } 
-        }
-        const newUser = {
-            _id: this.props.match.params.uid,
-            username,
-            password,
-            email,
-            firstName,
-            lastName
-        }
-        await axios.put("/api/user", newUser);
-        alert("Update Successfully")
-    }
-
-    
-
-    render() {
-        const {username, email, firstName, lastName} = this.state;
-        return (
-            <div className="background">
-           
-                <div className="container">
-                    <form id="profileForm" onSubmit={this.onSubmit}>
-                        <div className="form-group">
-                            <label htmlFor="username">Username</label>
-                            <input
-                                placeholder="Enter or edit your username..."
-                                className="form-control"
-                                type="text"
-                                id="username"
-                                name="username"
-                                value={username}
-                                onChange={this.onChange}
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="email">Email</label>
-                            <input
-                                placeholder="Enter or edit your email address..."
-                                type="email"
-                                className="form-control"
-                                id="email"
-                                name="email"
-                                value={email}
-                                onChange={this.onChange}
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="firstName">First Name</label>
-                            <input
-                                placeholder="Enter or edit your first name..."
-                                className="form-control"
-                                type="text"
-                                id="firstName"
-                                name="firstName"
-                                value={firstName}
-                                onChange={this.onChange}
-                            />
-                            <div></div>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="lastName">Last Name</label>
-                            <input
-                                placeholder="Enter or edit your last name..."
-                                type="text"
-                                className="form-control"
-                                id="lastName"
-                                name="lastName"
-                                value={lastName}
-                                onChange={this.onChange}
-                            />
-                        </div>
-                        <Link
-                            className="btn btn-primary btn-block"
-                            to={`/user/${this.props.match.params.uid}/website`}
-                        >
-                            Register
-                        </Link>
-                        <Link to="/login" className="btn btn-danger btn-block">
-                            Logout
-                        </Link>
-                    </form>
-                </div>
-                <nav className="navbar navbar-dark bg-primary fixed-bottom">
-                    <Link to="/user/123">
-                        <i className="fas fa-ninja" />
-                    </Link>
-                </nav>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <View style={styles.container}>
+          <View style={styles.header}></View>
+          <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
+          <View style={styles.body}>
+            <View style={styles.bodyContent}>
+              <Text style={styles.name}>Jaylen Phipps</Text>
+              <Text style={styles.info}> Web Devolper</Text>
+              <Text style={styles.description}>Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum electram expetendis, omittam deseruisse consequuntur ius an,</Text>
+              
+              <TouchableOpacity style={styles.buttonContainer}>
+                <Text>Opcion 1</Text>  
+              </TouchableOpacity>              
+              <TouchableOpacity style={styles.buttonContainer}>
+                <Text>Opcion 2</Text> 
+              </TouchableOpacity>
+            </View>
+        </View>
+      </View>
+    );
+  }
 }
+
+const styles = StyleSheet.create({
+  header:{
+    backgroundColor: "#00BFFF",
+    height:200,
+  },
+  avatar: {
+    width: 130,
+    height: 130,
+    borderRadius: 63,
+    borderWidth: 4,
+    borderColor: "white",
+    marginBottom:10,
+    alignSelf:'center',
+    position: 'absolute',
+    marginTop:130
+  },
+  name:{
+    fontSize:22,
+    color:"#FFFFFF",
+    fontWeight:'600',
+  },
+  body:{
+    marginTop:40,
+  },
+  bodyContent: {
+    flex: 1,
+    alignItems: 'center',
+    padding:30,
+  },
+  name:{
+    fontSize:28,
+    color: "#696969",
+    fontWeight: "600"
+  },
+  info:{
+    fontSize:16,
+    color: "#00BFFF",
+    marginTop:10
+  },
+  description:{
+    fontSize:16,
+    color: "#696969",
+    marginTop:10,
+    textAlign: 'center'
+  },
+  buttonContainer: {
+    marginTop:10,
+    height:45,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom:20,
+    width:250,
+    borderRadius:30,
+    backgroundColor: "#00BFFF",
+  },
+});
+ 

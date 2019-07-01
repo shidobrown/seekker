@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "../Profile.css"
 export default class Profile extends Component {
 
     state = {
@@ -13,7 +14,7 @@ export default class Profile extends Component {
     }
 
     async componentDidMount(){
-        const uid = this.props.match.params.uid;
+        const uid = this.props.match.params.uidA;
         const res = await axios.get(`/api/user/${uid}`);
         if(res.data){
             this.showUser(res.data);
@@ -62,18 +63,14 @@ export default class Profile extends Component {
         await axios.put("/api/user", newUser);
         alert("Update Successfully")
     }
+
     
 
     render() {
         const {username, email, firstName, lastName} = this.state;
         return (
-            <div>
-                <nav className="navbar navbar-dark bg-primary fixed-top">
-                    <span className="navbar-brand mb-0 h1">Profile</span>
-                    <button className='btn' form="profileForm" href="profile.html">
-                        <i className="fas fa-check" />
-                    </button>
-                </nav>
+            <div className="background">
+           
                 <div className="container">
                     <form id="profileForm" onSubmit={this.onSubmit}>
                         <div className="form-group">
@@ -111,6 +108,7 @@ export default class Profile extends Component {
                                 value={firstName}
                                 onChange={this.onChange}
                             />
+                            <div></div>
                         </div>
                         <div className="form-group">
                             <label htmlFor="lastName">Last Name</label>
@@ -128,7 +126,7 @@ export default class Profile extends Component {
                             className="btn btn-primary btn-block"
                             to={`/user/${this.props.match.params.uid}/website`}
                         >
-                            Websites
+                            Register
                         </Link>
                         <Link to="/login" className="btn btn-danger btn-block">
                             Logout
