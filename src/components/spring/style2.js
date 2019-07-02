@@ -11,8 +11,8 @@ const Global = createGlobalStyle`
   #root {
     margin: 0;
     padding: 0;
-    height: 100%;
-    width: 100%;
+    height: 40%;
+    width: 40%;
     overflow: hidden;
     user-select: none;
     
@@ -41,8 +41,8 @@ const Container = styled(animated.div)`
 `
 
 const Item = styled(animated.div)`
-  width: 100%;
-  height: 100%;
+  width: 40%;
+  height: 40%;
   background: white;
   border-radius: 5px;
   will-change: transform, opacity;

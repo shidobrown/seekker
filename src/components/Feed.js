@@ -1,15 +1,6 @@
-
-import ReactDOM from 'react-dom'
-import { Parallax, ParallaxLayer } from 'react-spring/addons'
+import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 import React, { Component } from "react";
 
-
-
-
-export default class Feed extends Component{
-
-}
-// Little helpers ...
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 const Pink = ({ children }) => <span style={{ color: '#FF6AC1' }}>{children}</span>
 const Yellow = ({ children }) => <span style={{ color: '#EFF59B' }}>{children}</span>
@@ -18,7 +9,9 @@ const Green = ({ children }) => <span style={{ color: '#57EE89' }}>{children}</s
 const Blue = ({ children }) => <span style={{ color: '#57C7FF' }}>{children}</span>
 const Gray = ({ children }) => <span style={{ color: '#909090' }}>{children}</span>
 
-class App extends React.Component {
+
+export default class Feed extends Component {
+  
   render() {
     return (
       <Parallax ref={ref => (this.parallax = ref)} pages={3}>
@@ -95,8 +88,6 @@ class App extends React.Component {
           <img src={url('clients-main')} style={{ width: '40%' }} />
         </ParallaxLayer>
       </Parallax>
-    )
+    );
   }
 }
-
-ReactDOM.render(<App />, document.getElementById('root'))

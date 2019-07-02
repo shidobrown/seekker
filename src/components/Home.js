@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 
 export default class Profile extends Component {
+
+  
   render() {
     return (
+  
       <div className="background">
         <div class="container">
           <div class="d-flex justify-content-center h-100">
@@ -19,7 +22,9 @@ export default class Profile extends Component {
                   <span>
                     <i class="fab fa-twitter-square" />
                   </span>
-                </div>
+                </div> 
+                
+                
               </div>
               <div class="card-body">
                 <form>

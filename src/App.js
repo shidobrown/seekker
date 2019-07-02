@@ -8,9 +8,11 @@ import World from "./components/World";
 import Library from "./components/Library";
 import Navbar from "./components/utility/Navbar";
 import Footer from "./components/utility/Footer";
-import Profile from "./components/Register";
+import Profile from "./components/Profile";
 import Menu from "./components/spring/Menu";
 import Feed from "./components/Feed";
+import Menumini from "./components/spring/Menumini";
+import Register from "./components/Register";
 
 
 
@@ -18,17 +20,22 @@ import Feed from "./components/Feed";
 function App() {
   return (
     <Router>
-      <Menu />
+     
+      
+      <Navbar/>
+    
       <Switch>
         <Route exact path="/Home" component={Home} />
         <Route exact path="/World" component={World} />
-        <Route exact path="/Library" component={Library} />
+  
         <Route exact path="/Profile" component={Profile} />
         <Route exact path="/" component={Menu} />
-        <Route exact path="/Register" component={Profile} />
+        <Route exact path="/Register" component={Register} />
         <Route exact path="/Feed" component={Feed} />
+        <Route exact path="/Menumni" component={Menumini} />
+
       </Switch>
-     
+
     </Router>
   );
 }

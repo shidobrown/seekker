@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import data from "./data";
-import { Global, Container, Item } from "./styles";
+import data from "../spring/data";
+import { Global, Container, Item } from "../spring/style2";
 import { useTransition, useSpring, useChain, config } from "react-spring";
 import $ from "jquery"
 import 'jquery-ui-dist/jquery-ui';
@@ -27,7 +27,7 @@ function Menu() {
   const transitions = useTransition(open ? data : [], item => item.name, {
     ref: transRef,
     unique: true,
-    trail: 400 / data.length,
+    trail: 200 / data.length,
     from: { opacity: 0, transform: "scale(0)" },
     enter: { opacity: 1, transform: "scale(1)" },
     leave: { opacity: 0, transform: "scale(0)" }
