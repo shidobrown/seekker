@@ -1,6 +1,9 @@
 
 import React, { Component } from "react";
 
+
+
+
 export default class Navbar extends Component {
 
   navigate = e => {
@@ -14,11 +17,10 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-ocean">
-          <img className="pointer" alt="" onClick={this.navigate} src={"https://66.media.tumblr.com/c0269fe4da420f2670d86c5972a04341/tumblr_mogpl1mQDn1sqxhneo1_500.gif"} />
-        </nav>
-          
+      <div className="">
+       
+          <img className="pointer" alt="" onClick={this.navigate} src={"https://media3.giphy.com/media/26xBzu2ogAunL19hS/giphy.gif?cid=790b76115d249e08395a2f6c550696b4&rid=giphy.gif"} />
+          <h1>gggg</h1>
       </div>
     );
   }

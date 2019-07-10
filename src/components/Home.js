@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 export default class Profile extends Component {
 
   
   render() {
     return (
   
-      <div className="background">
+      <div className="background-fluid">
         <div class="container">
           <div class="d-flex justify-content-center h-100">
             <div class="card">
@@ -67,10 +67,10 @@ export default class Profile extends Component {
               </div>
               <div class="card-footer">
                 <div class="d-flex justify-content-center links">
-                  Don't have an account?<a href="#">Sign Up</a>
+                  Don't have an account?<Link to="Register">Sign Up</Link> 
                 </div>
                 <div class="d-flex justify-content-center">
-                  <a href="#">Forgot your password?</a>
+                  <Link to="/">Forgot your password?</Link>
                 </div>
               </div>
             </div>

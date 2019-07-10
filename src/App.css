@@ -140,9 +140,47 @@ footer {
   }
   main > section > p {
     width: 100%
-  }
+  } 
+}
+
+.image-background {
+  background: url("https://media.giphy.com/media/BlcWQ9L2VfOFO/giphy.gif") no-repeat center center/cover;
+  height: 100vh;
+}
+
+.pointer {
+  cursor: pointer;
+  height: 100vh;
+  background: url("https://media3.giphy.com/media/26xBzu2ogAunL19hS/giphy.gif?cid=790b76115d249e08395a2f6c550696b4&rid=giphy.gi")
+
 }
 /*this is my divid*/
+.image-background {
+  background: url("https://media.giphy.com/media/BlcWQ9L2VfOFO/giphy.gif") no-repeat center center/cover;
+  height: 100vh;
+}
+.image-background {
+  background: url("https://media.giphy.com/media/BlcWQ9L2VfOFO/giphy.gif") no-repeat center center/cover;
+  height: 100vh;
+}
+.image-background {
+  background: url("https://media.giphy.com/media/BlcWQ9L2VfOFO/giphy.gif") no-repeat center center/cover;
+  height: 100vh;
+}
+.image-background {
+  background: url("https://media.giphy.com/media/BlcWQ9L2VfOFO/giphy.gif") no-repeat center center/cover;
+  height: 100vh;
+}
+.container-fluid-test {
+  width: 90%;
+  height: 90%;
+  
+}
+.background-world {
+  background-image: url("https://media0.giphy.com/media/xT8qBhrlNooHBYR9f2/200.webp?cid=790b76115d24eb0379374c7345426932&rid=200.webp");
+}
+
+
 
 
 

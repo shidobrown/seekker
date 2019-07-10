@@ -61,6 +61,7 @@ export default [
       description: '#f6d365 → #fda085',
       css: 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)',
       height: 200,
+      to: "/Feed"
     },
     {
       name: 'Trending',

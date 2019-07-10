@@ -18,7 +18,7 @@ export default class Navbar3 extends React.Component {
         { link: "Tiers", href: "#" },
         { link: "", href: "#" },
         { link: "Projects", href: "#" },
-        { link: "About", href: "#" }
+        { link: "About", href: "Menu" }
         
       ]
     };
