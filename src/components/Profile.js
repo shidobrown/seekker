@@ -1,87 +1,52 @@
 import React, { Component } from 'react'
-// $('.menu').on('click', function() {
 
-//     $('.portfolio-items').addclassName('animated zoomOutDown');
-//     setTimeout(function() {
-//       $('.portfolio-items').removeclassName('zoomOutDown').addclassName('fadeInLeft');
-//     }, 1000)
-//   });
-export default class Profile1 extends Component {
+export default class Profile extends Component {
     render() {
         return (
-            <div>
-              <div className="container">
-                <div className="browser">
-                  <div className="ropes">
-                    <div className="rope">
-                      <div className="rope-holder">
-                      </div>
-                      <div className="main-rope">
-                        <div className="hole"></div>
-                      </div>
-                    </div>
-                    <div className="rope">
-                      <div className="rope-holder">
-                      </div>
-                      <div className="main-rope">
-                        <div className="hole"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="hamburger-set">
-                    <div className="hamburger"> </div>
-                    <div className="hamburger"> </div>
-                    <div className="hamburger"> </div>
-                  </div>
-                  <div className="card-info">
-                    <div className="dribble-title">pager</div>
-                    <div className="author-info">
-                      <div className="author-name">
-                        Jaylen Phipps
-                      </div>
-                      <div className="author-title">
-                        FRONT-END DEVELOPER
-                      </div>
-                    </div>
-                    <div className="card-end"> </div>
-                  </div>
-                  <div className="portfolio">
-                    <div className="menu-filter">
-                      <div className="menu">SHOTS</div>
-                      <div className="menu">DESIGNERS</div>
-                      <div className="menu">TEAMS</div>
-                    </div>
-                    <div className="portfolio-items">
-                      <div className="item"><i className="fa fa-2x fa-link"></i>
-                      </div>
-                      <div className="item"><i className="fa fa-2x fa-link"></i>
-                      </div>
-                      <div className="item"><i className="fa fa-2x fa-link"></i>
-                      </div>
-                      <div className="item"><i className="fa fa-2x fa-link"></i>
-                      </div>
-                      <div className="item"><i className="fa fa-2x fa-link"></i>
-                      </div>
-                      <div className="item"><i className="fa fa-2x fa-link"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="hover-me">Hover and click on the menu items</div>
-                  <div className="too-low">Height is too low, please resize your window</div>
-                  <div className="circle-set">
-                    <div className="circle circle-pink"> </div>
-                    <div className="circle circle-orange"> </div>
-                    <div className="circle circle-green"> </div>
-                  </div>
-                  <div className="tooltip right">
-                    <div className="tooltip-inner"></div>
-                  </div>
-                </div>
-                <br />  
-                
-              </div>
-            </div>
+        <div>
+  <meta charSet="UTF-8" />
+  <title>My Portfolio</title>
+  <div className="nav">
+    <ul className="main-nav">
+      <li className="title">Web-head$</li>
+      
+      <li><a href="#contact" className="contact-btn nav-item">Contact</a></li>
+    </ul>
+  </div>
+  <header>
+    <img src="https://timedotcom.files.wordpress.com/2017/12/terry-crews-person-of-year-2017-time-magazine-2.jpg" alt="Profile_Pic"className="dp"/>
+    <h1 className="tag name">Hello, I'm <span style={{fontFamily: 'Lobster Two', letterSpacing: 1}}>jaylen</span>.</h1>
+    
+    <p className="tag name">boston , massachusetts</p>
+  </header>
+  <main>
+    <div className="container">
+      <div className="section">
+        <h2>Background</h2>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, tempore? Iste a non ullam ex ut placeat quia qui praesentium, alias itaque perspiciatis beatae voluptates repudiandae possimus dolore iure quasi!</p>
+        <p>
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam possimus ipsum dolores quod vero inventore ipsam, molestiae sint nulla corporis mollitia recusandae doloribus perferendis eligendi itaque repellat quisquam ullam reprehenderit.</p>
+        <p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe earum porro, consequuntur minima ea beatae perferendis rem autem tenetur vel. Veritatis eaque fuga iusto dolorum! Ducimus ipsa neque aliquam laborum.</p>
+      </div>
+      <div className="section">
+        <h2>Goals</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore aliquam commodi, maxime rerum fugit ipsam soluta laborum beatae repellendus ipsum laboriosam harum nisi sit ut aut? Illum laboriosam quidem enim.</p>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente quas fugit officiis dolorum eaque incidunt fuga at nostrum perspiciatis. Soluta magni atque accusantium incidunt obcaecati sequi aspernatur officiis harum id.</p>
+      </div>
+    </div>
+  </main>
+  <footer id="contact">
+    <ul>
+    </ul>
+  </footer>
+</div>
+
         )
     }
 }
-

@@ -15,10 +15,10 @@ export default class Navbar3 extends React.Component {
     this.state = {
       menuOpen: false,
       navItems: [
-        { link: "Tiers", href: "#" },
-        { link: "", href: "#" },
-        { link: "Projects", href: "#" },
-        { link: "About", href: "Menu" }
+        { link: "Home", to: "/World" },
+        { link: "Feed", to: "/Feed"},
+        { link: "Friends", to: "/Friends"},
+ 
         
       ]
     };

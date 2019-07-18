@@ -1,7 +1,4 @@
-.background {
-   
 
-}
 /*This is using an autoprefixer.  Even though with Safari 9 flex will finally be 100% supported, it's still a good idea to support legacy.*/
 * {
   box-sizing: border-box;
@@ -181,6 +178,18 @@ footer {
 }
 
 
-
+#menu {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 

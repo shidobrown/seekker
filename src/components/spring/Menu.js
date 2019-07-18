@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import data from "./data";
-import { Global, Container, Item } from "./styles";
+import { Container, Item } from "./styles";
 import { useTransition, useSpring, useChain, config } from "react-spring";
 import $ from "jquery"
 import 'jquery-ui-dist/jquery-ui';
@@ -40,8 +40,7 @@ function Menu() {
   ]);
 
   return (
-    <>
-      <Global />
+    <div id="menu">
       <Container
         id="menu"
         style={{ ...rest, width: size, height: size }}
@@ -56,7 +55,7 @@ function Menu() {
             </Link>
         ))}
       </Container>
-    </>
+    </div>
   );
 }
 

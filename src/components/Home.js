@@ -1,83 +1,80 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-export default class Profile extends Component {
+import axios from "axios";
 
-  
-  render() {
-    return (
-  
-      <div className="background-fluid">
-        <div class="container">
-          <div class="d-flex justify-content-center h-100">
-            <div class="card">
-              <div class="card-header">
-                <h3>Sign In</h3>
-                <div class="d-flex justify-content-end social_icon">
-                  <span>
-                    <i class="fab fa-facebook-square" />
-                  </span>
-                  <span>
-                    <i class="fab fa-google-plus-square" />
-                  </span>
-                  <span>
-                    <i class="fab fa-twitter-square" />
-                  </span>
-                </div> 
-                
-                
-              </div>
-              <div class="card-body">
-                <form>
-                  <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="fas fa-user" />
-                      </span>
+
+export default class Login extends Component {
+    
+
+    state = {
+        username: "",
+        password: ""
+    }
+
+    onChange = e => {
+       this.setState({
+           [e.target.name]: e.target.value
+       })
+    }
+
+    onSubmit = e => {
+        e.preventDefault();
+        const {username, password} = this.state;
+        const user = {
+            username,
+            password
+        }
+        this.login(user);
+    }
+
+    login = async user => {
+        const res = await axios.get(`/api/user?username=${user.username}&password=${user.password}`)
+        if(res.data){
+            this.props.history.push(`/user/${res.data._id}`);
+        } else {
+            alert("invalid credential");
+        }
+    }
+
+    render() {
+        return (
+            <div className="container">
+              
+            <h1>Login</h1>
+                <form onSubmit={this.onSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="username">Username</label>
+                        <input
+                            placeholder="Enter your username here..."
+                            className="form-control"
+                            type="text"
+                            id="username"
+                            name="username"
+                            value={this.state.username}
+                            onChange = {this.onChange}
+                        />
                     </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="username"
-                    />
-                  </div>
-                  <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="fas fa-key" />
-                      </span>
+                    <div className="form-group">
+                        <label htmlFor="password">Password</label>
+                        <input
+                            placeholder="Enter your password here..."
+                            type="password"
+                            className="form-control"
+                            id="password"
+                            name="password"
+                            value={this.state.password}
+                            onChange = {this.onChange}
+                        />
                     </div>
-                    <input
-                      type="password"
-                      class="form-control"
-                      placeholder="password"
-                    />
-                  </div>
-                  <div class="row align-items-center remember">
-                    <input type="checkbox" />
-                    Remember Me
-                  </div>
-                  <div class="form-group">
-                    <input
-                      type="submit"
-                      value="Login"
-                      class="btn float-right login_btn"
-                    />
-                  </div>
+                    <Link className="btn btn-succes btn-block" to="/Profile">
+                      login
+                    </Link>
+                 
+                    <Link className="btn btn-primary btn-block" to="/register">
+                        Register
+                    </Link>
                 </form>
-              </div>
-              <div class="card-footer">
-                <div class="d-flex justify-content-center links">
-                  Don't have an account?<Link to="Register">Sign Up</Link> 
-                </div>
-                <div class="d-flex justify-content-center">
-                  <Link to="/">Forgot your password?</Link>
-                </div>
-              </div>
             </div>
-            
-          </div>
-        </div>
-      </div>
-    );
-  }
+        );
+    }
 }

@@ -126,18 +126,18 @@ export default class Profile extends Component {
                             className="btn btn-primary btn-block"
                             to={`/user/${this.props.match.params.uid}/website`}
                         >
-                            Register
+                         
                         </Link>
                         <Link to="/login" className="btn btn-danger btn-block">
-                            Logout
+                       Register
                         </Link>
                     </form>
                 </div>
-                <nav className="navbar navbar-dark bg-primary fixed-bottom">
-                    <Link to="/user/123">
-                        <i className="fas fa-ninja" />
+                
+                    <Link to="/Profile">
+                    
                     </Link>
-                </nav>
+          
             </div>
         );
     }
